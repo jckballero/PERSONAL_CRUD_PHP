@@ -20,7 +20,7 @@
         }
 
         public function delete_producto($prod_id){
-            $conectar = parent::conexion();
+            $conectar= parent::conexion();
             parent::set_names();
             $sql="UPDATE tm_producto
                 SET
@@ -29,7 +29,7 @@
                 WHERE
                     prod_id = ?";
             $sql=$conectar->prepare($sql);
-            $sql->bindValue(1, $prod_id);
+            $sql->bindValue(1,$prod_id);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
